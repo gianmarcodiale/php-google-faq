@@ -31,6 +31,14 @@ $faqs = [
             "In alcuni casi sì. Quando fai clic su un risultato della Ricerca Google, il tuo browser web potrebbe reindirizzare alla pagina web di destinazione anche l'indirizzo Internet, o URL, della pagina dei risultati di ricerca sotto forma di URL referrer. Talvolta, l'URL della pagina dei risultati di ricerca potrebbe contenere la query di ricerca che hai inserito. Se utilizzi la ricerca SSL (la funzione di ricerca criptata di Google), nella maggior parte dei casi i termini di ricerca non vengono inviati come parte dell'URL negli URL referrer. Questo comportamento può fare eccezione, ad esempio se utilizzi alcuni browser meno diffusi. Ulteriori informazioni sulla ricerca SSL sono disponibili qui. Le query di ricerca o le informazioni contenute nell'URL referrer potrebbero essere disponibili mediante Google Analytics o un'API (Application Programming Interface). Inoltre, gli inserzionisti potrebbero ricevere informazioni relative all' esatte parole chiave che hanno determinato il clic su un annuncio."
         ]
     ]
+];
+
+$nav_links = [
+    "Introduzione",
+    "Norme sulla privacy",
+    "Termini di servizio",
+    "Tecnologie",
+    "Domande frequenti"
 ]
 ?>
 
@@ -45,18 +53,32 @@ $faqs = [
 
     <!-- Bootstrap CSS v5.0.2 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css">
 
 </head>
 
 <body>
-    <div class="container">
-        <?php foreach ($faqs as $faq) : ?>
-            <h2><?= $faq['question'] ?></h2>
-            <?php foreach ($faq['answer'] as $faq_answer) : ?>
-                <p><?= $faq_answer ?></p>
+    <header class="d-flex align-items-center" id="site_header">
+        <a href="https://www.google.it"><img src="./assets/img/googlelogo.svg" alt=""></a>
+        <span class="title">Privacy & Termini</span>
+    </header>
+    <nav id="site_nav">
+        <ul class="d-flex list-unstyled">
+            <?php foreach ($nav_links as $link) : ?>
+                <li><a href="#" class="<?php echo ($link == "Domande frequenti") ? 'active' : '' ?>"><?= $link ?></a></li>
             <?php endforeach; ?>
-        <?php endforeach; ?>
-    </div>
+        </ul>
+    </nav>
+    <main id="site_main">
+        <div class="container">
+            <?php foreach ($faqs as $faq) : ?>
+                <h2><?= $faq['question'] ?></h2>
+                <?php foreach ($faq['answer'] as $faq_answer) : ?>
+                    <p><?= $faq_answer ?></p>
+                <?php endforeach; ?>
+            <?php endforeach; ?>
+        </div>
+    </main>
 
 
 

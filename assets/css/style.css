@@ -1,0 +1,35 @@
+#site_header {
+    padding: 1.25rem;
+}
+
+.title {
+    font-size: 25px;
+    padding-left: 0.75rem;
+    color: #333333;
+}
+
+#site_nav {
+    padding: 0 0 0 0.5rem;
+}
+
+#site_nav li {
+    padding: 0.75rem;
+}
+
+#site_nav a {
+    text-decoration: none;
+    color: #333333;
+}
+
+li:hover a {
+    border-bottom: 2px solid cornflowerblue;
+}
+
+#site_main h2 {
+    color: #333333;
+    font-weight: 400;
+}
+
+.active {
+    border-bottom: 2px solid cornflowerblue;
+}
