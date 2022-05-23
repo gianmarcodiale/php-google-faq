@@ -72,9 +72,9 @@ $nav_links = [
     <main id="site_main">
         <div class="container">
             <?php foreach ($faqs as $faq) : ?>
-                <h2><?= $faq['question'] ?></h2>
+                <h2 class="pb-3"><?= $faq['question'] ?></h2>
                 <?php foreach ($faq['answer'] as $faq_answer) : ?>
-                    <p><?= $faq_answer ?></p>
+                    <p class="pb-4"><?= $faq_answer ?></p>
                 <?php endforeach; ?>
             <?php endforeach; ?>
         </div>
